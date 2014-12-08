@@ -2,19 +2,16 @@ package com.wanghao.swipetabs;
 
 import java.util.ArrayList;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class MainActivity extends FragmentActivity {
 
     
-    private ViewPager viewPager = null;
+    private MyViewPager viewPager = null;
     
     //三个tab
     private View tab1 = null;
@@ -44,8 +41,8 @@ public class MainActivity extends FragmentActivity {
     
     private void initViewPager() {
         //获取到ViewPager的实例
-        this.viewPager = (ViewPager)findViewById(R.id.viewpager);
-        
+        this.viewPager = (MyViewPager)findViewById(R.id.viewpager);
+        viewPager.setCanScroll(false);
         //构造好存放Fragment的数组
         ArrayList<Fragment> fragmentArray = new ArrayList<Fragment>();
         fragmentArray.add(new Fragment1());
